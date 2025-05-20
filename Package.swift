@@ -1,10 +1,11 @@
 // swift-tools-version:5.3
+
 import PackageDescription
 
 let package = Package(
     name: "Koloda",
     platforms: [
-        .iOS(.v11)
+        .iOS("13.0"),
     ],
     products: [
         .library(
@@ -15,7 +16,7 @@ let package = Package(
     targets: [
         .target(
             name: "Koloda",
-            path: "Koloda"
+            path: "Example/Koloda",
         )
     ]
 )
