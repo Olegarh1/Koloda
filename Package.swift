@@ -13,15 +13,15 @@ let package = Package(
         ),
     ],
     dependencies: [
-            .package(name: "pop", url: "https://github.com/facebook/pop.git", from: "1.0.14")
-        ],
+        .package(name: "Pop", path: "Dependencies/pop")
+    ],
     targets: [
         .target(
             name: "Koloda",
             dependencies: [
-                   .product(name: "pop", package: "pop")
-               ],
+                .product(name: "pop", package: "Pop")
+            ],
             path: "Sources/Koloda"
-        )
+        ),
     ]
 )
