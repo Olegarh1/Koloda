@@ -13,15 +13,17 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(name: "Pop", path: "Dependencies/pop")
+      // Локальний Pop
+      .package(name: "Pop", path: "Dependencies/pop")
     ],
     targets: [
-        .target(
-            name: "Koloda",
-            dependencies: [
-                .product(name: "pop", package: "Pop")
-            ],
-            path: "Sources/Koloda"
-        ),
+      .target(
+        name: "Koloda",
+        dependencies: [
+          // імпорт продукту із вашого локального пакета
+          .product(name: "pop", package: "Pop")
+        ],
+        path: "Sources/Koloda"
+      )
     ]
 )
