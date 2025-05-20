@@ -7,23 +7,22 @@ let package = Package(
         .iOS(.v13)
     ],
     products: [
-        .library(
-            name: "Koloda",
-            targets: ["Koloda"]
-        ),
+        .library(name: "Koloda", targets: ["Koloda"])
     ],
     dependencies: [
-      // Локальний Pop
-      .package(name: "Pop", path: "Dependencies/pop")
+        .package(
+            name: "pop-spm-package",
+            url: "https://github.com/vmzhivetyev/pop-spm-package.git",
+            from: "1.0.0"
+        )
     ],
     targets: [
-      .target(
-        name: "Koloda",
-        dependencies: [
-          // імпорт продукту із вашого локального пакета
-          .product(name: "pop", package: "Pop")
-        ],
-        path: "Sources/Koloda"
-      )
+        .target(
+            name: "Koloda",
+            dependencies: [
+                .product(name: "pop", package: "pop-spm-package")
+            ],
+            path: "Sources/Koloda"
+        )
     ]
 )
